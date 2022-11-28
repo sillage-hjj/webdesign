@@ -16,7 +16,7 @@ body {
   background: linear-gradient(#2b1055,#7597de);
 }
 
-header {
+nav {
   position: absolute;
   top: 0;
   left: 0;
@@ -28,7 +28,7 @@ header {
   z-index: 10000;
 }
 
-header .logo {
+nav .logo {
   color: #fff;
   font-weight: 700;
   text-decoration: none;
@@ -37,36 +37,35 @@ header .logo {
   letter-spacing: 2px; /* 字符间距 */
 }
 
-header ul {
+nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-header ul li {
+nav ul li {
   list-style: none;
   margin-left: 20px;
 }
 
-header ul li a.active {
-  background: #fff;
-  color: #2b1055;
-}
-
-header ul li a:hover{
+nav ul li a:hover{
   background: #fff;
   color: #2b1055;
   -webkit-animation: 250ms linear 0s 1 alternate bigger;
 }
 
-header ul li a {
+nav ul li a:active {
+  background: #fff;
+  color: #2b1055;
+}
+
+nav ul li a {
   text-decoration: none;
   padding: 6px 15px;
   color: #fff;
   border-radius: 20px;
 }
-
-
+/*标题行项目渐变效果*/
 @-webkit-keyframes bigger {
   from{background-color:unset} to {background-color: #fff}
   from{color:#fff} to {color:#2b1055}
@@ -82,7 +81,7 @@ section {
   align-items: center;
   overflow: hidden;
 }
-
+/*::before选中匹配元素的第一个子元素*/
 section::before {
   content: '';
   position: absolute;
@@ -99,13 +98,13 @@ section img {
   left: 0;
   width: 100%;
   height: 100%;
-  /* object-fit CSS 属性指定可替换元素（例如：<img> 或 <video>）的内容应该如何适应到其使用高度和宽度确定的框。 */
+  /* object-fit CSS 属性指定可替换元素的内容应该如何适应到其使用高度和宽度确定的框。 */
   object-fit: cover;
   pointer-events: none;
 }
 
 section img#moon {
-  /* mix-blend-mode CSS 属性描述了元素的内容应该与元素的直系父元素的内容和元素的背景如何混合。 */ 
+  /* mix-blend-mode CSS 属性描述了元素的内容应该与元素的直系父元素的内容和元素的背景如何混合。 */
   mix-blend-mode: screen;
 }
 
@@ -142,12 +141,131 @@ section img#mountains_front {
 }
 
 .sec h2 {
-  font-size: 3.5em;
+  font-size: 4em;
+  font-family: "华文隶书", sans-serif;
   margin-bottom: 10px;
+  text-align: right;
   color: #fff;
 }
 
-.sec p {
+.sec p{
   font-size: 1em;
+  font-family: "Poppins","方正姚体", sans-serif;
   color: #fff;
+}
+
+.sec h3{
+  font-size:2em;
+  text-decoration: underline double 2px;
+  /*border-bottom:5px double #fff;*/
+  text-align: center;
+  font-family: "Fira Code Retina", sans-serif;
+  color:#fff;
+}
+
+.sec h4{
+  font-size: 1.1em;
+  color:#fff;
+  font-family: "Fira Code Retina", sans-serif;
+}
+
+.sec div pre{
+  border-radius: 0.25rem;
+}
+
+.sec div pre code{
+  /*code为行内元素，如果要使用display等需要将其display属性设置为inline-block行内块*/
+  display: inline-block;
+  position: static;
+  color:cyan;
+  font-size: 1em;
+  font-family: "JetBrains Mono", sans-serif;
+  width: 100%;
+  padding: 10px 10px 10px 60px;
+  background-color: #343434;
+}
+
+p code{
+  background: #343434;
+  font-family: Menlo,Consolas,Monaco,Liberation Mono,Lucida Console,monospace;
+  padding: 0.125rem 0.25rem;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.copy-icon {
+  border-radius: 0.25rem;
+  cursor: pointer;
+  height: 1.25rem;
+  margin: 0;
+  -webkit-mask-image: url(/images/clippy.92fffda9d37d9c3a3b37.svg);
+  mask-image: url(/images/clippy.92fffda9d37d9c3a3b37.svg);
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  opacity: .4;
+  padding: 0.25rem;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.75rem;
+  width: 1.25rem;
+}
+
+hr{
+  color:#fff;
+  size: 2em;
+}
+
+div hr{
+  color: antiquewhite;
+  size: 2em;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.p-pic{
+  text-align: center;
+  /*display: flex;*/
+}
+
+.pic{
+  background: #fff;
+  border: 1px solid #858585!important;
+  border-radius: 0.25rem;
+  display: flex;
+  height: auto;
+  margin: 2rem auto;
+}
+
+pre{
+  background-color: #343434;
+  border: 1px solid transparent;
+  margin: 1rem 0 2rem;
+  padding: 1rem 2.5rem 1rem 1rem;
+}
+
+ol li{
+  margin-left:4%;
+  color:#fff;
+  font-family: "Fira Code Retina", sans-serif;
+}
+
+ol li .high-light{
+  color:#fff;
+  font-family: "Fira Code Retina", sans-serif;
+  display: inline;
+  font-weight: bolder;
+}
+
+.general-font{
+  color:#fff;
+  size:1em;
+}
+
+.inline-code{
+  border-radius: 5px;
+}
+
+.label{
+  color:orange;
+  font-family: "JetBrains Mono", sans-serif;
 }

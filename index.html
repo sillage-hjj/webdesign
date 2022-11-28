@@ -2,52 +2,144 @@
 <html lang="zh_CN">
 <head>
   <meta charset = "UTF-8">
-  <title>Parallax Scrolling Website</title>
+  <title>HJJ's Blog</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
+  <nav>
     <a href="#" class="logo">Logo</a>
     <ul>
-      <li><a href="#" class="active">Home</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="#">Work</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
-  </header>
+  </nav>
   <section>
     <img src="images/stars.png" id="stars">
     <img src="images/moon.png" id="moon">
     <img src="images/mountains_behind.png" id="mountains_behind">
-    <h2 id="text" class="slide">Hjj's 博客</h2>
+    <h2 id="text" class="slide">Hello, visitor.</h2>
     <a href="#sec" id="btn">Explore</a>
     <img src="images/mountains_front.png" id="mountains_front">
   </section>
-  <div class="sec" id="sec">
-    <h2>Parallax Scrolling Effects</h2>
-    <p>123</p>
-  </div>
+  <article class="sec" id="sec">
+    <h2>何嘉骏's 博客</h2>
+    <hr>
+    <br>
+    <div>
+      <h3>Self Introduction</h3>
+      <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        嗨，这里是何嘉骏，一个刚刚学会网页设计的小白。这一个学期的课程了解了HTML标签的使用以及
+        CSS层叠样式表控制标签样式还有利用JavaScript实现网页交互。如今课内与课外的所学都呈现在
+        这个网页里，记录一个学期的历程。
+      </p>
+    </div>
+    <br>
+    <article>
+      <h3>HTML</h3>
+      <h4>简介</h4>
+      <p>超文本标记语言 (英语：Hypertext Markup Language，简称：HTML ) 是一种用来结构化 Web 网页及其内容的标记语言。网页内容可以是：一组段落、一个重点信息列表、也可以含有图片和数据表。正如标题所示，本文将对 HTML 及其功能做一个基本介绍。</p>
 
-  <script>
-    let stars = document.getElementById('stars')
-    let moon = document.getElementById('moon')
-    let mountains_behind = document.getElementById('mountains_behind')
-    let text = document.getElementById('text')
-    let btn = document.getElementById('btn')
-    let mountains_front = document.getElementById('mountains_front')
-    let header = document.querySelector('header')
+      <h4>HTML到底是什么</h4>
+      <p>HTML 不是一门编程语言，而是一种用于定义内容结构的标记语言。HTML 由一系列的**元素（elements）**组成，这些元素可以用来包围不同部分的内容，使其以某种方式呈现或者工作。一对标签（ tags）可以为一段文字或者一张图片添加超链接，将文字设置为斜体，改变字号，等等。例如，键入下面一行内容：</p>
+      <div>
+        <pre><code>My cat is very grumpy</code></pre>
+        <button type="button" class="copy-icon"></button>
+      </div>
+      <p>可以将这行文字封装成一个段落（paragraph）元素来使其在单独一行呈现：</p>
+      <div>
+        <pre><code><span class="label">&lt;p&gt;</span>My cat is very grumpy<span class="label">&lt;p&gt;</span></code></pre>
+        <button type="button" class="copy-icon"></button>
+      </div>
 
-    window.addEventListener('scroll', function(){
-      let value = window.scrollY;
-      stars.style.left = value * 0.25 + 'px'
-      moon.style.top = value * 1.05 + 'px'
-      mountains_behind.style.top = value * 0.5 + 'px'
-      mountains_front.style.top = value * 0 + 'px'
-      text.style.marginRight = value * 4 + 'px'
-      text.style.marginTop = value * 1.5 + 'px'
-      btn.style.marginTop = value * 1.5 + 'px'
-      header.style.top = value * 0.5 + 'px'
-    })
-  </script>
+      <h4>HTML元素详解</h4>
+      <p>让我们深入探索一下这个段落元素。</p>
+      <p class="p-pic"><img class="pic"src="images/introduce-code-simple-example.png"></p>
+      <p>这个元素的主要部分有：</p>
+      <ol>
+        <li><p class="high-light">开始标签</p>（Opening tag）：包含元素的名称（本例为 p），被大于号、小于号所包围。表示元素从这里开始或者开始起作用 —— 在本例中即段落由此开始。</li>
+        <li><p class="high-light">结束标签</p>（Closing tag）：与开始标签相似，只是其在元素名之前包含了一个斜杠。这表示着元素的结尾 —— 在本例中即段落在此结束。初学者常常会犯忘记包含结束标签的错误，这可能会产生一些奇怪的结果。</li>
+        <li><p class="high-light">内容</p>（Content）：元素的内容，本例中就是所输入的文本本身。</li>
+        <li><p class="high-light">元素</p>（Element）：开始标签、结束标签与内容相结合，便是一个完整的元素。</li>
+      </ol>
+      <p>元素也可以有属性（Attribute）：</p>
+      <p class="p-pic"><img class="pic"src="images/introduce-code-attribute.png" width="1287" height="156"></p>
+      <p>属性包含了关于元素的一些额外信息，这些信息本身不应显现在内容中。本例中，
+        <code class="inline-code">class</code>
+        是属性名称，
+        <code class="inline-code">editor-note</code>
+        是属性的值。
+        <code class="inline-code">class</code>
+        属性可为元素提供一个标识名称，以便进一步为元素指定样式或进行其他操作时使用。
+      </p>
+      <p>属性应该包含：</p>
+      <ol>
+        <li>在属性与元素名称（或上一个属性，如果有超过一个属性的话）之间的空格符。</li>
+        <li>属性的名称，并接上一个等号。</li>
+        <li>由引号所包围的属性值。</li>
+      </ol>
+    </article>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident,
+      sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident,
+      sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident,
+      sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident,
+      sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident,
+      sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident,
+      sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident,
+      sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident,
+      sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </article>
+<!--滑动效果-->
+  <script src="js/slide.js"></script>
 </body>
 </html>
