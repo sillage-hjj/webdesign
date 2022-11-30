@@ -46,12 +46,10 @@
       <p>HTML 不是一门编程语言，而是一种用于定义内容结构的标记语言。HTML 由一系列的**元素（elements）**组成，这些元素可以用来包围不同部分的内容，使其以某种方式呈现或者工作。一对标签（ tags）可以为一段文字或者一张图片添加超链接，将文字设置为斜体，改变字号，等等。例如，键入下面一行内容：</p>
       <div>
         <pre><code>My cat is very grumpy</code></pre>
-        <button type="button" class="copy-icon"></button>
       </div>
       <p>可以将这行文字封装成一个段落（paragraph）元素来使其在单独一行呈现：</p>
       <div>
-        <pre><code><span class="label">&lt;p&gt;</span>My cat is very grumpy<span class="label">&lt;p&gt;</span></code></pre>
-        <button type="button" class="copy-icon"></button>
+        <pre><code><span class="label">&lt;p&gt;</span>My cat is very grumpy<span class="label">&lt;/p&gt;</span></code></pre>
       </div>
 
       <h4>HTML元素详解</h4>
@@ -80,6 +78,140 @@
         <li>属性的名称，并接上一个等号。</li>
         <li>由引号所包围的属性值。</li>
       </ol>
+      <h4>嵌套元素</h4>
+      <p>也可以将一个元素置于其他元素之中 —— 称作嵌套。要表明猫咪"very grumpy"，可以将“very”用
+        <code class="inline-code"><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/strong">&lt;strong&gt;</a></code>
+      元素包围，very字将突出显示：</p>
+      <div>
+        <pre><code><span class="label">&lt;p&gt;</span>My cat is<span class="label">&lt;strong&gt;</span>very<span class="label">&lt;/strong&gt;</span> grumpy<span class="label">&lt;/p&gt;</span></code></pre>
+      </div>
+      <p>元素必须正确地开始和结束，才能清楚地显示出正确的嵌套层次。否则浏览器就得自己猜测，虽然它会竭尽全力，但很大程度不会给你期望的结果。所以一定要避免！</p>
+    </article>
+    <article>
+      <h3>CSS</h3>
+      <p>层叠样式表（Cascading Style Sheet，简称：CSS）是为网页添加样式的代码。本节将介绍 CSS 的基础知识，并解答类似问题：怎样将文本设置为黑色或红色？怎样将内容显示在屏幕的特定位置？怎样用背景图片或颜色来装饰网页？</p>
+      <h4>CSS 究竟什么来头？</h4>
+      <p>和 HTML 类似，CSS 也不是真正的编程语言，甚至不是标记语言。它是一门样式表语言，这也就是说人们可以用它来选择性地为 HTML 元素添加样式。举例来说，要选择一个 HTML 页面里所有的段落元素，然后将其中的文本改成红色，可以这样写 CSS：</p>
+      <div><pre><code><span class="class-name">p</span> {<br><span class="label">&nbsp;&nbsp;&nbsp;color</span>: red;<br>}</code></pre></div>
+      <p>不妨试一下：首先新建一个 <code class="inline-code">styles</code> 文件夹，在其中新建一个 <code class = "inline-code">style.css</code> 文件，将这三行 CSS 保存在这个新文件中。
+        然后再将该 CSS 文件连接至 HTML 文档，否则 CSS 代码不会对 HTML 文档在浏览器里的显示效果有任何影响。</p>
+      <ol>
+        <li>
+          打开 index.html 文件，然后将下面一行粘贴到文档头（也就是
+          <code class="inline-code">&lt;head&gt;</code>
+            和
+          <code class="inline-code">&lt;/head&gt;</code>
+          标签之间）。
+          <div><pre><code>&lt;<span class="class-name">link</span> <span class="label">href</span>="style/style.css"<br><span class="label">rel</span>="stylesheet"&gt;</code></pre></div>
+        </li>
+        <li>
+          保存 <span class="inline-code">index.html</span> 并用浏览器将其打开。应该看到以下页面：
+        </li>
+      </ol>
+      <p class="p-pic"><img class="pic" src = "/images/website-screenshot-styled.png"></p>
+      <p>如果段落文字变红，那么祝贺你，你已经成功地迈出了 CSS 学习的第一步。</p>
+      <h4>“CSS 规则集”详解</h4>
+      <p>让我们来仔细看一看上述 CSS：</p>
+      <p class="p-pic"><img class="pic" src="/images/css-declaration-small.png"></p>
+      <p>整个结构称为 <span class="high-light">规则集</span>（通常简称“规则”），各部分释义如下：</p>
+      <br>
+      <dl>
+        <dt>
+          <p>选择器（<span class="high-light">Selector</span>）</p>
+        </dt>
+        <dd>
+          <p>HTML 元素的名称位于规则集开始。它选择了一个或多个需要添加样式的元素（在这个例子中就是 <code class="inline-code">p</code> 元素）。要给不同元素添加样式只需要更改选择器就行了。</p>
+        </dd>
+        <dt>
+          <p>声明（<span class="high-light">Declaration</span>）</p>
+        </dt>
+        <dd>
+          <p>一个单独的规则，如 <code class="inline-code"><span class="label">color</span>: red</code>; 用来指定添加样式元素的属性。</p>
+        </dd>
+        <dt>
+          <p>属性（<span class="high-light">Properties</span>）</p>
+        </dt>
+        <dd>
+          <p>改变 HTML 元素样式的途径。（本例中 <code class="inline-code">color</code> 就是 <code class="inline-code"><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/p">&lt;p&gt;</a></code> 元素的属性。）CSS 中，由编写人员决定修改哪个属性以改变规则。</p>
+        </dd>
+        <dt>
+          <p>属性的值（Property value）</p>
+        </dt>
+        <dd>
+          <p>在属性的右边，冒号后面即属性的值，它从指定属性的众多外观中选择一个值（我们除了 <code class="inline-code">red</code> 之外还有很多属性值可以用于 <code class="inline-code">color</code> ）。</p>
+        </dd>
+      </dl>
+      <p>注意其他重要的语法：</p>
+      <ul>
+        <li><p>每个规则集（除了选择器的部分）都应该包含在成对的大括号里（<code class="inline-code">{}</code>）。</p></li>
+        <li><p>在每个声明里要用冒号（<code class="inline-code">:</code>）将属性与属性值分隔开。</p></li>
+        <li><p>在每个规则集里要用分号（<code class="inline-code">;</code>）将各个声明分隔开。</p></li>
+      </ul>
+      <p>如果要同时修改多个属性，只需要将它们用分号隔开，就像这样：</p>
+      <div><pre><code><span class="label">p</span> {<br>&nbsp;&nbsp;&nbsp;<span class="class-name">color</span>: red;<br>&nbsp;&nbsp;&nbsp;<span class="class-name">width</span>: 500px;<br>&nbsp;&nbsp;&nbsp;<span class="class-name">border</span>: 1px solid black;<br>}</code></pre></div>
+      <h4>多元素选择</h4>
+      <p>也可以选择多种类型的元素并为它们添加一组相同的样式。将不同的选择器用逗号分开。例如：</p>
+      <div><pre><code><span class="label">p, li, h1</span> {<br>&nbsp;&nbsp;&nbsp;<span class="class-name">color</span>: red;<br>}</code></pre></div>
+      <h4>不同类型的选择器</h4>
+      <p>选择器有许多不同的类型。上面只介绍了元素选择器，用来选择 HTML 文档中给定的元素。但是选择操作可以更加具体。下面是一些常用的选择器类型：</p>
+      <table>
+        <thead>
+        <tr>
+          <th><p>选择器名称</p></th>
+          <th><p>选择的内容</p></th>
+          <th><p>示例</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><p>元素选择器（也称作标签或类型选择器）</p></td>
+          <td><p>所有指定 (该) 类型的 HTML 元素</p></td>
+          <td><p><code class="inline-code">p</code> 选择 <code class="inline-code">&lt;p&gt;</code></p></td>
+        </tr>
+        <tr>
+          <td><p>ID 选择器</p></td>
+          <td><p>具有特定 ID 的元素（单一 HTML 页面中，每个 ID 只对应一个元素，一个元素只对应一个 ID）</p></td>
+          <td><p><code class="inline-code">#my-id</code> 选择 <code class="inline-code">&lt;p id="my-id"&gt;</code> 或 <code class="inline-code">&lt;a id="my-id"&gt;</code></p></td>
+        </tr>
+        <tr>
+          <td><p>类选择器</p></td>
+          <td><p>具有特定类的元素（单一页面中，一个类可以有多个实例）</p></td>
+          <td><p><code class="inline-code">.my-class</code> 选择 <code class="inline-code">&lt;p class="my-class"&gt;</code> 和 <code class="inline-code">&lt;a class="my-class"&gt;</code></p></td>
+        </tr>
+        <tr>
+          <td><p>属性选择器</p></td>
+          <td><p>拥有特定属性的元素</p></td>
+          <td><p><code class="inline-code">img[src]</code> 选择 <code class="inline-code">&lt;img src="myimage.png"&gt;</code> 而不是 <code class="inline-code">&lt;img&gt;</code></p></td>
+        </tr>
+        <tr>
+          <td><p>伪（Pseudo）类选择器</p></td>
+          <td><p>特定状态下的特定元素（比如鼠标指针悬停）</p></td>
+          <td><p><code class="inline-code">a:hover</code> 仅在鼠标指针悬停在链接上时选择 <code class="inline-code">&lt;a&gt;</code>。</p></td>
+        </tr>
+        </tbody>
+      </table>
+      <p>选择器的种类远不止于此，更多信息请参阅 <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors">选择器</a>。</p>
+    </article>
+    <article>
+      <h3>JavaScript</h3>
+      <p>JavaScript 是一门编程语言，可为网站添加交互功能（例如：游戏、动态样式、动画以及在按下按钮或收到表单数据时做出的响应等）。本文介绍了 JavaScript 的精彩之处和主要用途。</p>
+      <h4>JavaScript 到底是什么？</h4>
+      <p>JavaScript（缩写：JS）是一门完备的动态编程语言。当应用于 HTML 文档时，可为网站提供动态交互特性。由布兰登·艾克（Brendan Eich，Mozilla 项目、Mozilla 基金会和 Mozilla 公司的联合创始人）发明。</p>
+      <br>
+      <p>JavaScript 的应用场合极其广泛，简单到幻灯片、照片库、浮动布局和响应按钮点击，复杂到游戏、2D/3D 动画、大型数据库驱动程序等等。</p>
+      <br>
+      <p>JavaScript 相当简洁，却非常灵活。开发者们基于 JavaScript 核心编写了大量实用工具，可以使 开发工作事半功倍。其中包括：</p>
+      <ul>
+        <li>浏览器应用程序接口（<a href="https://developer.mozilla.org/zh-CN/docs/Glossary/API"> API</a>）—— 浏览器内置的 API 提供了丰富的功能，比如：动态创建 HTML 和设置 CSS 样式、从用户的摄像头采集处理视频流、生成 3D 图像与音频样本等等。</li>
+        <li>第三方 API —— 让开发者可以在自己的站点中整合其它内容提供者（Twitter、Facebook 等）提供的功能。</li>
+        <li>第三方框架和库 —— 用来快速构建网站和应用。</li>
+      </ul>
+      <p>本节是一篇 JavaScript 简介，因此这个阶段不会对 JavaScript 语言和上述工具做过多的介绍。之后可以到<a href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript"> JavaScript 学习区 </a>和 MDN 的其它地方学习更多细节。</p>
+      <br>
+      <p>下面对语言核心做一个不完整介绍，期间还可以接触到一些浏览器 API 特性。</p>
+      <h4>“Hello World!”示例</h4>
+      <p>读到这里你一定很激动，诚然 —— JavaScript 是最振奋人心的 Web 技术之一，而且在娴熟驾驭之后，你的网站在功能和创新力上将达到一个新的维度。</p>
+      <p>然而，JavaScript 比 HTML 和 CSS 学习起来更加复杂一点，所以必须一步一个脚印地学习。首先，来看看如何在页面中添加一些基本的 JavaScript 脚本来建造一个“Hello world!”示例（<a href="https://zh.wikipedia.org/wiki/Hello_World">一切始于 Hello World</a>）。</p>
     </article>
 
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -89,55 +221,23 @@
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
       Excepteur sint occaecat cupidatat non proident,
       sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident,
-      sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident,
-      sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident,
-      sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident,
-      sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident,
-      sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident,
-      sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident,
-      sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <ol>
+      <li>首先，打开你的测试站点，创建一个名为 scripts 的文件夹。然后在其中创建一个名为 <code class="inline-code">main.js</code> 的文件。</li>
+      <li>
+        下一步，在 <code class="inline-code">index.html</code> 文件<code class="inline-code">&lt;/body&gt;</code> 标签前的新行添加以下代码。
+        <div><pre><code>&lt;<span class="label">script</span><span class="class-name"> src=</span>"scripts/main.js" <span class="class-name">defer</span>&gt;&lt;/<span class="label">script</span>&gt;</code></pre></div>
+      </li>
+      <li>与 CSS 的 <span class="inline-code"><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/link">&lt;link&gt;</a></span> 元素类似，它将 JavaScript 引入页面以作用于 HTML（以及 CSS 等页面上所有内容）：</li>
+      <li>现在将以下代码添加到 main.js 文件中：</li>
+      <div><pre><code><span class="label">let</span> myHeading = document.querySelector('h1');<br>myHeading.textContent = 'Hello world!';</code></pre></div>
+      <li>
+        最后，保存 HTML 和 JavaScript 文件，用浏览器打开 <span class="inline-code">index.html</span>。可以看到如下内容：
+        <p class="p-pic"><img class="pic" src="/images/hello-world.png"></p>
+      </li>
+    </ol>
+    <h4>发生了什么？</h4>
+    <p>JavaScript 把页面的标题改成了“Hello world!” 。首先用 <code class="inline-code"><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document/querySelector">querySelector()</a></code> 函数获取标题的引用，并把它储存在 <code class="inline-code">myHeading</code> 变量中。这与 CSS 选择器的用法非常相像：若要对某个元素进行操作，首先得选择它。</p>
+    <p>之后，把 <code class="inline-code">myHeading</code> 变量的属性 <code class="inline-code"><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Node/textContent">textContent</a></code> （标题内容）修改为“Hello world!” 。</p>
   </article>
 <!--滑动效果-->
   <script src="js/slide.js"></script>

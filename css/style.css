@@ -173,15 +173,16 @@ section img#mountains_front {
   border-radius: 0.25rem;
 }
 
-.sec div pre code{
+.sec div code{
   /*code为行内元素，如果要使用display等需要将其display属性设置为inline-block行内块*/
   display: inline-block;
+  border-radius: 0.25rem;
   position: static;
   color:cyan;
   font-size: 1em;
   font-family: "JetBrains Mono", sans-serif;
   width: 100%;
-  padding: 10px 10px 10px 60px;
+  padding: 0.5em 0.5em 0.5em 3em;
   background-color: #343434;
 }
 
@@ -191,23 +192,6 @@ p code{
   padding: 0.125rem 0.25rem;
   width: -moz-fit-content;
   width: fit-content;
-}
-
-.copy-icon {
-  border-radius: 0.25rem;
-  cursor: pointer;
-  height: 1.25rem;
-  margin: 0;
-  -webkit-mask-image: url(/images/clippy.92fffda9d37d9c3a3b37.svg);
-  mask-image: url(/images/clippy.92fffda9d37d9c3a3b37.svg);
-  -webkit-mask-size: cover;
-  mask-size: cover;
-  opacity: .4;
-  padding: 0.25rem;
-  position: absolute;
-  right: 0.5rem;
-  top: 0.75rem;
-  width: 1.25rem;
 }
 
 hr{
@@ -249,7 +233,7 @@ ol li{
   font-family: "Fira Code Retina", sans-serif;
 }
 
-ol li .high-light{
+.high-light{
   color:#fff;
   font-family: "Fira Code Retina", sans-serif;
   display: inline;
@@ -263,9 +247,80 @@ ol li .high-light{
 
 .inline-code{
   border-radius: 5px;
+  background: #343434;
+  font-family: Menlo,Consolas,Monaco,Liberation Mono,Lucida Console,monospace;
+  padding: 0.125rem 0.25rem;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .label{
   color:orange;
   font-family: "JetBrains Mono", sans-serif;
+}
+
+.class-name{
+  color:purple;
+  font-family: "JetBrains Mono", sans-serif;
+}
+
+code a, p a,li a{
+  color:cadetblue;
+}
+
+dl dd{
+  padding-left:2rem;
+}
+
+article ul{
+  padding-left:2rem;
+  color:#fff;
+}
+
+table {
+  display: table;
+  text-indent: initial;
+  border-spacing: 2px;
+  border: 1px solid #858585;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+figure {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 40px;
+  margin-inline-end: 40px;
+}
+
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+table th {
+  background: #4e4e4e;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: left;
+}
+
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+table td, table th {
+  border: 1px solid #858585;
+  padding: 0.5rem 0.75rem;
+  vertical-align: middle;
 }
