@@ -54,7 +54,7 @@ nav ul li a:hover{
   -webkit-animation: 250ms linear 0s 1 alternate bigger;
 }
 
-nav ul li a:active {
+nav ul li a.active {
   background: #fff;
   color: #2b1055;
 }
@@ -207,6 +207,7 @@ div hr{
 }
 
 .p-pic{
+  display: block;
   text-align: center;
   /*display: flex;*/
 }
@@ -218,6 +219,8 @@ div hr{
   display: flex;
   height: auto;
   margin: 2rem auto;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 pre{
@@ -277,6 +280,11 @@ article ul{
   color:#fff;
 }
 
+article{
+  padding-left:200px;
+  padding-right:200px;
+}
+
 table {
   display: table;
   text-indent: initial;
@@ -324,3 +332,4 @@ table td, table th {
   padding: 0.5rem 0.75rem;
   vertical-align: middle;
 }
+

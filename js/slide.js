@@ -4,7 +4,7 @@ let mountains_behind = document.getElementById('mountains_behind')
 let text = document.getElementById('text')
 let btn = document.getElementById('btn')
 let mountains_front = document.getElementById('mountains_front')
-let nav = document.querySelector('nav')
+let nav = document.getElementById('topnav')
 
 window.addEventListener('scroll', function(){
     let value = window.scrollY;

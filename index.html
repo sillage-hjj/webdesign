@@ -3,10 +3,79 @@
 <head>
   <meta charset = "UTF-8">
   <title>HJJ's Blog</title>
+  <link rel="stylesheet" href="css/leftnav.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/iconfont.css">
 </head>
 <body>
-  <nav>
+  <nav class="menu-box">
+    <!-- 展示与隐藏侧边栏 开始-->
+    <input type="checkbox" id="menu-btn">
+    <label for="menu-btn"><i class="iconfont icon-yemianfanhui"></i></label>
+    <!-- 展示与隐藏侧边栏 结束-->
+    <div class="menu">
+      <!-- 侧边栏的标题 开始-->
+      <div class="menu-title">
+        <h1>Menu</h1>
+      </div>
+      <!-- 侧边栏的标题 结束-->
+
+      <!-- 每一项导航 -->
+      <div class="menu-item">
+        <input type="checkbox" id="menu-item1">
+        <label for="menu-item1">
+          <i class="menu-item-icon iconfont icon-a-01-shujuzhongxin"></i>
+          <span>HTML</span>
+          <i class="menu-item-last iconfont icon-down"></i>
+        </label>
+        <div class="menu-content">
+          <span><a style="text-decoration: none;color: #fff" href="#html-introduction">简介</a></span>
+          <span><a style="text-decoration: none;color: #fff" href="#what-is-html">HTML到底是什么</a></span>
+          <span><a style="text-decoration: none;color: #fff" href="#html-element">HTML元素详解</a></span>
+          <span><a style="text-decoration: none;color: #fff" href="#nested-elements">嵌套元素</a></span>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <input type="checkbox" id="menu-item2">
+        <label for="menu-item2">
+          <i class="menu-item-icon iconfont icon-a-02-kechengguanli"></i>
+          <span>CSS</span>
+          <i class="menu-item-last iconfont icon-down"></i>
+        </label>
+        <div class="menu-content">
+          <span><a style="text-decoration: none;color: #fff" href="#what-is-css">CSS 究竟什么来头？</a></span>
+          <span><a style="text-decoration: none;color: #fff" href="#css-rule">“CSS 规则集”详解</a></span>
+          <span><a style="text-decoration: none;color: #fff" href="#multi-element-selector">多元素选择</a></span>
+          <span><a style="text-decoration: none;color: #fff" href="#different-selector">不同类型的选择器</a></span>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <input type="checkbox" id="menu-item3">
+        <label for="menu-item3">
+          <i class="menu-item-icon iconfont icon-a-04-zixunfabu"></i>
+          <span>JavaScript</span>
+          <i class="menu-item-last iconfont icon-down"></i>
+        </label>
+        <div class="menu-content">
+          <span><a style="text-decoration: none;color: #fff" href="#what-is-javascript">JavaScript 到底是什么？</a></span>
+          <span><a style="text-decoration: none;color: #fff" href="#hello-example">“Hello World!”示例</a></span>
+          <span><a style="text-decoration: none;color: #fff" href="#what-is-happening">发生了什么？</a></span>
+        </div>
+      </div>
+
+      <div class="set-line"></div>
+
+      <div class="menu-item">
+        <label>
+          <i class="menu-item-icon iconfont icon-a-08-shezhi"></i>
+          <span>setting</span>
+        </label>
+      </div>
+    </div>
+  </nav>
+  <nav id="topnav">
     <a href="#" class="logo">Logo</a>
     <ul>
       <li><a href="index.html" class="active">Home</a></li>
@@ -27,7 +96,7 @@
     <h2>何嘉骏's 博客</h2>
     <hr>
     <br>
-    <div>
+    <article>
       <h3>Self Introduction</h3>
       <p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -35,14 +104,14 @@
         CSS层叠样式表控制标签样式还有利用JavaScript实现网页交互。如今课内与课外的所学都呈现在
         这个网页里，记录一个学期的历程。
       </p>
-    </div>
+    </article>
     <br>
     <article>
       <h3>HTML</h3>
-      <h4>简介</h4>
+      <h4 id="html-introduction">简介</h4>
       <p>超文本标记语言 (英语：Hypertext Markup Language，简称：HTML ) 是一种用来结构化 Web 网页及其内容的标记语言。网页内容可以是：一组段落、一个重点信息列表、也可以含有图片和数据表。正如标题所示，本文将对 HTML 及其功能做一个基本介绍。</p>
 
-      <h4>HTML到底是什么</h4>
+      <h4 id="what-is-html">HTML到底是什么</h4>
       <p>HTML 不是一门编程语言，而是一种用于定义内容结构的标记语言。HTML 由一系列的**元素（elements）**组成，这些元素可以用来包围不同部分的内容，使其以某种方式呈现或者工作。一对标签（ tags）可以为一段文字或者一张图片添加超链接，将文字设置为斜体，改变字号，等等。例如，键入下面一行内容：</p>
       <div>
         <pre><code>My cat is very grumpy</code></pre>
@@ -52,9 +121,9 @@
         <pre><code><span class="label">&lt;p&gt;</span>My cat is very grumpy<span class="label">&lt;/p&gt;</span></code></pre>
       </div>
 
-      <h4>HTML元素详解</h4>
+      <h4 id="html-element">HTML元素详解</h4>
       <p>让我们深入探索一下这个段落元素。</p>
-      <p class="p-pic"><img class="pic"src="images/introduce-code-simple-example.png"></p>
+      <p class="p-pic"><img class="pic" src="images/introduce-code-simple-example.png"></p>
       <p>这个元素的主要部分有：</p>
       <ol>
         <li><p class="high-light">开始标签</p>（Opening tag）：包含元素的名称（本例为 p），被大于号、小于号所包围。表示元素从这里开始或者开始起作用 —— 在本例中即段落由此开始。</li>
@@ -63,7 +132,7 @@
         <li><p class="high-light">元素</p>（Element）：开始标签、结束标签与内容相结合，便是一个完整的元素。</li>
       </ol>
       <p>元素也可以有属性（Attribute）：</p>
-      <p class="p-pic"><img class="pic"src="images/introduce-code-attribute.png" width="1287" height="156"></p>
+      <p class="p-pic"><img class="pic" src="images/introduce-code-attribute.png" width="1287" height="156"></p>
       <p>属性包含了关于元素的一些额外信息，这些信息本身不应显现在内容中。本例中，
         <code class="inline-code">class</code>
         是属性名称，
@@ -78,7 +147,7 @@
         <li>属性的名称，并接上一个等号。</li>
         <li>由引号所包围的属性值。</li>
       </ol>
-      <h4>嵌套元素</h4>
+      <h4 id="nested-elements">嵌套元素</h4>
       <p>也可以将一个元素置于其他元素之中 —— 称作嵌套。要表明猫咪"very grumpy"，可以将“very”用
         <code class="inline-code"><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/strong">&lt;strong&gt;</a></code>
       元素包围，very字将突出显示：</p>
@@ -90,7 +159,7 @@
     <article>
       <h3>CSS</h3>
       <p>层叠样式表（Cascading Style Sheet，简称：CSS）是为网页添加样式的代码。本节将介绍 CSS 的基础知识，并解答类似问题：怎样将文本设置为黑色或红色？怎样将内容显示在屏幕的特定位置？怎样用背景图片或颜色来装饰网页？</p>
-      <h4>CSS 究竟什么来头？</h4>
+      <h4 id="what-is-css">CSS 究竟什么来头？</h4>
       <p>和 HTML 类似，CSS 也不是真正的编程语言，甚至不是标记语言。它是一门样式表语言，这也就是说人们可以用它来选择性地为 HTML 元素添加样式。举例来说，要选择一个 HTML 页面里所有的段落元素，然后将其中的文本改成红色，可以这样写 CSS：</p>
       <div><pre><code><span class="class-name">p</span> {<br><span class="label">&nbsp;&nbsp;&nbsp;color</span>: red;<br>}</code></pre></div>
       <p>不妨试一下：首先新建一个 <code class="inline-code">styles</code> 文件夹，在其中新建一个 <code class = "inline-code">style.css</code> 文件，将这三行 CSS 保存在这个新文件中。
@@ -110,7 +179,7 @@
       </ol>
       <p class="p-pic"><img class="pic" src = "/images/website-screenshot-styled.png"></p>
       <p>如果段落文字变红，那么祝贺你，你已经成功地迈出了 CSS 学习的第一步。</p>
-      <h4>“CSS 规则集”详解</h4>
+      <h4 id="css-rule">“CSS 规则集”详解</h4>
       <p>让我们来仔细看一看上述 CSS：</p>
       <p class="p-pic"><img class="pic" src="/images/css-declaration-small.png"></p>
       <p>整个结构称为 <span class="high-light">规则集</span>（通常简称“规则”），各部分释义如下：</p>
@@ -149,10 +218,10 @@
       </ul>
       <p>如果要同时修改多个属性，只需要将它们用分号隔开，就像这样：</p>
       <div><pre><code><span class="label">p</span> {<br>&nbsp;&nbsp;&nbsp;<span class="class-name">color</span>: red;<br>&nbsp;&nbsp;&nbsp;<span class="class-name">width</span>: 500px;<br>&nbsp;&nbsp;&nbsp;<span class="class-name">border</span>: 1px solid black;<br>}</code></pre></div>
-      <h4>多元素选择</h4>
+      <h4 id="multi-element-selector">多元素选择</h4>
       <p>也可以选择多种类型的元素并为它们添加一组相同的样式。将不同的选择器用逗号分开。例如：</p>
       <div><pre><code><span class="label">p, li, h1</span> {<br>&nbsp;&nbsp;&nbsp;<span class="class-name">color</span>: red;<br>}</code></pre></div>
-      <h4>不同类型的选择器</h4>
+      <h4 id="different-selector">不同类型的选择器</h4>
       <p>选择器有许多不同的类型。上面只介绍了元素选择器，用来选择 HTML 文档中给定的元素。但是选择操作可以更加具体。下面是一些常用的选择器类型：</p>
       <table>
         <thead>
@@ -195,7 +264,7 @@
     <article>
       <h3>JavaScript</h3>
       <p>JavaScript 是一门编程语言，可为网站添加交互功能（例如：游戏、动态样式、动画以及在按下按钮或收到表单数据时做出的响应等）。本文介绍了 JavaScript 的精彩之处和主要用途。</p>
-      <h4>JavaScript 到底是什么？</h4>
+      <h4 id="what-is-javascript">JavaScript 到底是什么？</h4>
       <p>JavaScript（缩写：JS）是一门完备的动态编程语言。当应用于 HTML 文档时，可为网站提供动态交互特性。由布兰登·艾克（Brendan Eich，Mozilla 项目、Mozilla 基金会和 Mozilla 公司的联合创始人）发明。</p>
       <br>
       <p>JavaScript 的应用场合极其广泛，简单到幻灯片、照片库、浮动布局和响应按钮点击，复杂到游戏、2D/3D 动画、大型数据库驱动程序等等。</p>
@@ -209,18 +278,10 @@
       <p>本节是一篇 JavaScript 简介，因此这个阶段不会对 JavaScript 语言和上述工具做过多的介绍。之后可以到<a href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript"> JavaScript 学习区 </a>和 MDN 的其它地方学习更多细节。</p>
       <br>
       <p>下面对语言核心做一个不完整介绍，期间还可以接触到一些浏览器 API 特性。</p>
-      <h4>“Hello World!”示例</h4>
+      <h4 id="hello-example">“Hello World!”示例</h4>
       <p>读到这里你一定很激动，诚然 —— JavaScript 是最振奋人心的 Web 技术之一，而且在娴熟驾驭之后，你的网站在功能和创新力上将达到一个新的维度。</p>
       <p>然而，JavaScript 比 HTML 和 CSS 学习起来更加复杂一点，所以必须一步一个脚印地学习。首先，来看看如何在页面中添加一些基本的 JavaScript 脚本来建造一个“Hello world!”示例（<a href="https://zh.wikipedia.org/wiki/Hello_World">一切始于 Hello World</a>）。</p>
-    </article>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident,
-      sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     <ol>
       <li>首先，打开你的测试站点，创建一个名为 scripts 的文件夹。然后在其中创建一个名为 <code class="inline-code">main.js</code> 的文件。</li>
       <li>
@@ -235,9 +296,10 @@
         <p class="p-pic"><img class="pic" src="/images/hello-world.png"></p>
       </li>
     </ol>
-    <h4>发生了什么？</h4>
+    <h4 id="what-is-happening">发生了什么？</h4>
     <p>JavaScript 把页面的标题改成了“Hello world!” 。首先用 <code class="inline-code"><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document/querySelector">querySelector()</a></code> 函数获取标题的引用，并把它储存在 <code class="inline-code">myHeading</code> 变量中。这与 CSS 选择器的用法非常相像：若要对某个元素进行操作，首先得选择它。</p>
-    <p>之后，把 <code class="inline-code">myHeading</code> 变量的属性 <code class="inline-code"><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Node/textContent">textContent</a></code> （标题内容）修改为“Hello world!” 。</p>
+      <p>之后，把 <code class="inline-code">myHeading</code> 变量的属性 <code class="inline-code"><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Node/textContent">textContent</a></code> （标题内容）修改为“Hello world!” 。</p>
+    </article>
   </article>
 <!--滑动效果-->
   <script src="js/slide.js"></script>
