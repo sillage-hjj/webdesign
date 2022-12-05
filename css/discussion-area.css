@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    /* 当用户手动导航或者 CSSOM scrolling API 触发滚动操作时 */
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(#2b1055,#7597de);
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+
+nav .logo {
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase; /* 大写 */
+    letter-spacing: 2px; /* 字符间距 */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+nav ul li a:hover{
+    background: #fff;
+    color: #2b1055;
+    -webkit-animation: 250ms linear 0s 1 alternate bigger;
+}
+
+nav ul li a.active {
+    background: #fff;
+    color: #2b1055;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    border-radius: 20px;
+}
+/*标题行项目渐变效果*/
+@-webkit-keyframes bigger {
+    from{background-color:unset} to {background-color: #fff}
+    from{color:#fff} to {color:#2b1055}
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: #1c0522;
+}
+/*::before选中匹配元素的第一个子元素*/
+section::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #1c0522, transparent);
+    z-index: 1000;
+}
+
+section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* object-fit CSS 属性指定可替换元素的内容应该如何适应到其使用高度和宽度确定的框。 */
+    object-fit: cover;
+    pointer-events: none;
+}
+
+section img#moon {
+    /* mix-blend-mode CSS 属性描述了元素的内容应该与元素的直系父元素的内容和元素的背景如何混合。 */
+    mix-blend-mode: screen;
+}
+
+section img#mountains_front {
+    z-index: 10;
+}
+
+.sec {
+    position: relative;
+    padding: 100px;
+    background: #1c0522;
+}
+
+.sec h2 {
+    font-size: 4em;
+    font-family: "华文隶书", sans-serif;
+    margin-bottom: 10px;
+    text-align: right;
+    color: #fff;
+}
+
+.sec p{
+    font-size: 1em;
+    font-family: "Poppins","方正姚体", sans-serif;
+    color: #fff;
+}
+
+.input-type{
+    border-radius: 1rem;
+    border-style: solid;
+    width:100%;
+}
+
+.button-type{
+    border-radius: 1rem;
+    text-align: center;
+
+}
+
+.button-p{
+    text-align: center;
+}
+
+form{
+    background: inherit;
+    position: relative;
+    width: 60%;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 50px;
+    align-items: center;
+    top: 100px;
+    margin-bottom: 5rem;
+    box-shadow: 0 2px 2px #7597de;
+    padding: 3rem 5rem 5rem 5rem;
+    overflow: hidden;
+    z-index: 100;
+}
+
+form::before{
+    content:"";
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    overflow: hidden;
+    background: inherit;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+.asd{
+    /*background-image: linear-gradient(to right top, #2b1021, transparent);*/
+    background: #1c0522;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+h3{
+    font-size:2em;
+    text-decoration: underline double 2px;
+    /*border-bottom:5px double #fff;*/
+    text-align: center;
+    font-family: "Fira Code Retina", sans-serif;
+    color:#fff;
+}
+
+.input-button{
+    background: linear-gradient(to right, #7597de, #a649d1);
+    border-radius: 1rem;
+    width: 5rem;
+    height: 2rem;
+}
