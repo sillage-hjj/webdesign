@@ -5,10 +5,11 @@
   <title>Parallax Scrolling Website</title>
 <!--  <link rel="stylesheet" href="css/style.css">-->
   <link rel="stylesheet" href="css/discussion-area.css">
+  <link rel="stylesheet" href="css/contect.css">
 </head>
 <body>
 <nav>
-  <a href="#" class="logo">Logo</a>
+  <a href="#" class="logo">BLOG</a>
   <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
@@ -25,13 +26,37 @@
 
 <article class="sec asd">
   <h3>Contact</h3>
-  <form>
-    <input type="text" class="input-type" placeholder="姓名">
-    <input type="text" class="input-type" placeholder="邮箱(xxxxx@xxx.com)">
-    <input type="text" class="input-type" placeholder="想说的话：">
-    <p class="button-p"><input type="button" value="提交" class="input-button"></p>
-  </form>
+  <hr>
+<!--  <form>-->
+<!--    <input type="text" class="input-type" placeholder="姓名">-->
+<!--    <input type="text" class="input-type" placeholder="邮箱(xxxxx@xxx.com)">-->
+<!--    <input type="text" class="input-type-wild" placeholder="想说的话：">-->
+<!--    <p class="button-p"><input type="button" value="提交" class="input-button"></p>-->
+<!--  </form>-->
+
+  <main onclick="mainCLick(event)" style="text-align: left">
+    <div class="form_item">
+      <label>姓名：</label>
+      <input id="commentator" placeholder="请输入您希望展示的名称"/>
+    </div>
+    <div class="form_item">
+      <label class="label_img">
+        <img src="images/touxiang.jpeg" width="25px" style="border-radius: 100%">
+      </label>
+      <textarea id="comment_space"
+                onkeyup="readKey(event)"
+                onclick="commentFocus(event)"
+                placeholder="请输入您要评论的内容"></textarea>
+    </div>
+    <div id="button_submit_div">
+    </div>
+    <hr/>
+    <div id="comment_view">
+    </div>
+  </main>
 </article>
+
+<script src="js/contect.js"></script>
 <script src="js/slide.js"></script>
 </body>
 </html>

@@ -136,6 +136,28 @@ section img#mountains_front {
     border-radius: 1rem;
     border-style: solid;
     width:100%;
+    height: 20%;
+    background: #7597de;
+}
+
+.input-type-wild{
+    border-radius: 1rem;
+    border-style: solid;
+    width:100%;
+    height: 60%;
+    background: #7597de;
+}
+
+.input-type-wild::placeholder{
+    color:lightcyan;
+    font-family: Poppins, 幼圆, sans-serif;
+    font-size:1rem;
+}
+
+.input-type::placeholder{
+    color:lightcyan;
+    font-family: Poppins, 幼圆, sans-serif;
+    font-size:1rem;
 }
 
 .button-type{
@@ -152,7 +174,7 @@ form{
     background: inherit;
     position: relative;
     width: 60%;
-    height: 220px;
+    height: 330px;
     display: flex;
     flex-direction: column;
     border-radius: 50px;

@@ -1,0 +1,153 @@
+body, html{
+    background-color: rgb(0, 0, 0, 0.05);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+dt, dd, dl{
+    margin: 0;
+    padding: 0;
+}
+dt, dd{
+    font-weight: 500;
+    display: inline-block;
+}
+textarea{
+    color:lightcyan;
+    width: 820px; height: 50px; resize: none;
+    border-radius: 1rem;
+    border-style: solid;
+    background: #7597de;
+}
+
+textarea::placeholder{
+    color:lightcyan;
+    font-family: Poppins, 幼圆, sans-serif;
+    font-size:1rem;
+}
+
+#button_submit_div > div > button{
+    font-family: Poppins, 幼圆, sans-serif;
+    border: none;
+    color: white;
+    padding: 4px 10px;
+    background: linear-gradient(to right, #7597de, #a649d1);
+    border-radius: 1rem;
+}
+#button_submit_div{
+    text-align: right;
+}
+.time{
+    padding: 0 10px;
+    color: lightgray;
+}
+main ul{
+    list-style: none;
+    padding: 0;
+}
+main ul > li:hover{
+    background: deepskyblue;
+    cursor: pointer;
+}
+main ul > li{
+    padding: 10px 10px;
+    border-bottom: solid 0.5px lightgray;
+    display: block;
+}
+main ul > li:last-child{
+    border-bottom: none;
+}
+.cmt_img, .right_box{
+    display: inline-block;
+    vertical-align: middle;
+}
+.avatar{
+    display: block;
+}
+aside, main{
+    color:#fff;
+    font-family: Poppins, 幼圆, sans-serif;
+    background: inherit;
+    position: relative;
+    width: 60%;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 50px;
+    align-items: center;
+    top: 100px;
+    margin-bottom: 5rem;
+    box-shadow: 0 2px 2px #7597de;
+    padding: 3rem 5rem 5rem 5rem;
+    overflow: hidden;
+    z-index: 100;
+}
+
+label{
+    font-family: Poppins,幼圆,sans-serif;
+}
+
+main::before{
+    content:"";
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    overflow: hidden;
+    background: inherit;
+    filter: blur(5px);
+    z-index: -1;
+}
+aside{
+    margin-left: 20px;
+    text-align: center;
+    width: 300px;
+}
+main{
+    padding: 20px;
+    text-align: left;
+    width: 900px;
+}
+.form_item{
+    padding: 10px 0;
+}
+.menu > div{
+    display: inline-block;
+    padding: 10px 10px;
+}
+.menu > div:hover{
+    background: deepskyblue;
+    cursor: pointer;
+}
+.menu{
+    margin: 0;
+    padding: 0;
+    background: white;
+    position: absolute;
+    width: 100%;
+    text-align: center
+}
+input, textarea{
+    border-radius: 1rem;
+    background: #7597de;
+    border: solid 0.5px lightgray;
+}
+input, textarea::placeholder{
+    color:lightcyan;
+    font-family: Poppins, 幼圆, sans-serif;
+    font-size:1rem;
+}
+input{
+    padding: 4px 4px;
+    height: 30px;
+}
+input::placeholder{
+    color:lightcyan;
+}
+textarea{
+    padding: 10px;
+    height: 60px;
+}
